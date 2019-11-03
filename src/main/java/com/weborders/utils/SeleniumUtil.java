@@ -1,5 +1,7 @@
 package com.weborders.utils;
 
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -30,5 +32,9 @@ public class SeleniumUtil {
 	
 	public boolean isDisplayed(By locator) {
 		return findElement(locator).isDisplayed();
+	}
+	
+	public List<WebElement> findElements(By locator) {
+		return Driver.getDriver().findElements(locator);
 	}
 }
