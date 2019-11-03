@@ -18,4 +18,10 @@ public class DashboardPage extends PageBase {
 	public void logout() {
 		Driver.getDriver().findElement(logoutLinkLocator).click();
 	}
+
+	@Override
+	public void waitForPageToLoad() {
+		
+		
+	}
 }

@@ -44,4 +44,10 @@ public class LoginPage extends PageBase {
 	public boolean isLoginButtonDisplayed() {
 		return seleniumUtil.isDisplayed(loginButtonLocator);
 	}
+
+	@Override
+	public void waitForPageToLoad() {
+		
+		
+	}
 }
