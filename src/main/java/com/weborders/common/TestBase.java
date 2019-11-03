@@ -9,17 +9,17 @@ public class TestBase extends Base {
 	
 	@BeforeSuite
 	public void beforeSuite() {
-		
+		Driver.setUpDriver();
 	}
 	
 	@BeforeMethod
 	public void beforeMethod() {
-		
+		Driver.getDriver();
 	}
 	
 	@AfterMethod
 	public void afterMethod() {
-		
+		Driver.closeDriver();
 	}
 	
 	@AfterSuite
