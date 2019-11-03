@@ -25,4 +25,14 @@ public class DashboardTests extends TestBase {
 		boolean isLoginButtonDisplayed = loginPage.isLoginButtonDisplayed();
 		Assert.assertTrue(isLoginButtonDisplayed);
 	}
+	
+	@Test
+	public void verifyDeleteRowFunctionality() throws InterruptedException {
+		new LoginPage().login("Tester", "test");
+		DashboardPage dashboardPage = new DashboardPage();
+		int initialNumberOfRows = dashboardPage.getNumberOfRowsOnTable();
+		dashboardPage.deleteFirstRow();
+		int finalNumberOfRows = dashboardPage.getNumberOfRowsOnTable();
+		Assert.assertEquals(finalNumberOfRows, initialNumberOfRows - 1);
+	}
 }

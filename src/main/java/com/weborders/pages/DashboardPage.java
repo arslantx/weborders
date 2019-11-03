@@ -34,6 +34,11 @@ public class DashboardPage extends PageBase {
 		return seleniumUtil.findElements(tableRowLocator).size();
 	}
 	
+	public void deleteFirstRow() {
+		checkFirstCheckbox();
+		clickDeleteButton();
+	}
+	
 
 	@Override
 	public void waitForPageToLoad() {
