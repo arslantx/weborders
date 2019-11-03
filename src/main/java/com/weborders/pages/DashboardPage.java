@@ -42,5 +42,6 @@ public class DashboardPage extends PageBase {
 
 	@Override
 	public void waitForPageToLoad() {
+		seleniumUtil.waitForVisibility(logoutLinkLocator);
 	}
 }
