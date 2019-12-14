@@ -8,14 +8,14 @@ import com.weborders.pages.DashboardPage;
 import com.weborders.pages.LoginPage;
 
 public class DashboardTests extends TestBase {
-	@Test
+	@Test(groups = { "dashboard", "regression" })
 	public void verifyUsersNameOnDashboardMatches() {
 		new LoginPage().login("Tester", "test");
 		String usersNameOnDashboard = new DashboardPage().getUsersNameFromDashboard();
 		Assert.assertTrue(usersNameOnDashboard.contains("Tester"));
 	}
 	
-	@Test
+	@Test(groups = { "dashboard", "regression" })
 	public void verifyUserCanLogout() {
 		LoginPage loginPage = new LoginPage();
 		loginPage.login("Tester", "test");
@@ -24,7 +24,7 @@ public class DashboardTests extends TestBase {
 		Assert.assertTrue(isLoginButtonDisplayed);
 	}
 	
-	@Test
+	@Test(groups = { "dashboard", "regression" })
 	public void verifyDeleteRowFunctionality() throws InterruptedException {
 		new LoginPage().login("Tester", "test");
 		DashboardPage dashboardPage = new DashboardPage();
