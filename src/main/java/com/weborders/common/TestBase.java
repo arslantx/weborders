@@ -7,22 +7,22 @@ import org.testng.annotations.BeforeSuite;
 
 public class TestBase extends Base {
 	
-	@BeforeSuite
+	@BeforeSuite (alwaysRun = true)
 	public void beforeSuite() {
 		Driver.setUpDriver();
 	}
 	
-	@BeforeMethod
+	@BeforeMethod (alwaysRun = true)
 	public void beforeMethod() {
 		Driver.getDriver();
 	}
 	
-	@AfterMethod
+	@AfterMethod (alwaysRun = true)
 	public void afterMethod() {
 		Driver.closeDriver();
 	}
 	
-	@AfterSuite
+	@AfterSuite (alwaysRun = true)
 	public void afterSuite() {
 		
 	}
