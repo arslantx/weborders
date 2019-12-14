@@ -10,7 +10,7 @@ import com.weborders.pages.LoginPage;
 
 public class LoginTests extends TestBase {
 	
-	@Test (groups = { "regression" })
+	@Test
 	public void verifyUserCanLoginWithCorrectCredentials() {
 		LoginPage loginPage = new LoginPage();
 		loginPage.login("Tester", "test");
@@ -19,7 +19,7 @@ public class LoginTests extends TestBase {
 				, "http://secure.smartbearsoftware.com/samples/TestComplete11/WebOrders/default.aspx");
 	}
 	
-	@Test (groups = { "login", "regression" })
+	@Test
 	public void verifyUserWithIncorrectPasswordIsShownErrorMessage() {
 		LoginPage loginPage = new LoginPage();
 		loginPage.login("Tester", "fdksdflkdsjflk");

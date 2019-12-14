@@ -1,23 +1,21 @@
 package com.weborders.tests;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import com.weborders.common.Driver;
 import com.weborders.common.TestBase;
 import com.weborders.pages.DashboardPage;
 import com.weborders.pages.LoginPage;
 
 public class DashboardTests extends TestBase {
-	@Test (groups = { "regression" })
+	@Test
 	public void verifyUsersNameOnDashboardMatches() {
 		new LoginPage().login("Tester", "test");
 		String usersNameOnDashboard = new DashboardPage().getUsersNameFromDashboard();
 		Assert.assertTrue(usersNameOnDashboard.contains("Tester"));
 	}
 	
-	@Test (groups = { "regression" })
+	@Test
 	public void verifyUserCanLogout() {
 		LoginPage loginPage = new LoginPage();
 		loginPage.login("Tester", "test");
@@ -26,7 +24,7 @@ public class DashboardTests extends TestBase {
 		Assert.assertTrue(isLoginButtonDisplayed);
 	}
 	
-	@Test (groups = { "regression" })
+	@Test
 	public void verifyDeleteRowFunctionality() throws InterruptedException {
 		new LoginPage().login("Tester", "test");
 		DashboardPage dashboardPage = new DashboardPage();
